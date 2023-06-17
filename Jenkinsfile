@@ -77,3 +77,30 @@ def runApp(containerName, tag, dockerHubUser, httpPort, envName) {
     sh "docker run --rm --env SPRING_ACTIVE_PROFILES=$envName -d -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
 }
+
+
+String getEnvName(String branchName) {
+    if (branchName == 'main') {
+        return 'prod'
+    } else if (branchName.startsWith("release-") || branchName.startsWith("hotfix-") || branchName == 'ready') {
+        return 'uat'
+    }
+    return 'dev'
+}
+
+String getHTTPPort(String branchName) {
+    if (branchName == 'main') {
+        return '9001'
+
+    } else if (branchName.startsWith("release-") || branchName.startsWith("hotfix-") || branchName == 'ready') {
+        return '9002'
+    }
+    return '9003'
+}
+
+String getTag(String buildNumber, String branchName) {
+    if (branchName == 'main') {
+        return buildNumber + '-unstable'
+    }
+    return buildNumber + '-stable'
+}
