@@ -4,7 +4,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/springbootcrudexample?serverTimezone=UTC
+    url: jdbc:mysql://host.docker.internal:3306/springbootcrudexample?serverTimezone=UTC
     username: root
     password: azerty
 server:
