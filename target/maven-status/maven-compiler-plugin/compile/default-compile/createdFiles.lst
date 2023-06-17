@@ -1,7 +1,12 @@
+com\springbootcrudexample\exceptions\StudentNotFoundException.class
 com\springbootcrudexample\service\StudentService.class
 com\springbootcrudexample\main\SpringMain.class
 com\springbootcrudexample\repository\StudentRepository.class
 com\springbootcrudexample\entity\Student.class
+com\springbootcrudexample\exceptions\MissingAttributeException.class
 com\springbootcrudexample\serviceimpl\StudentServiceImpl.class
 com\springbootcrudexample\controller\StudentController.class
+com\springbootcrudexample\exceptions\ExceptionDetails.class
+com\springbootcrudexample\exceptions\BadRequestException.class
+com\springbootcrudexample\exceptions\StudentExceptionHandler.class
 com\springbootcrudexample\config\JpaConfig.class

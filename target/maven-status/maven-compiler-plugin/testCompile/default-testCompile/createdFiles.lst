@@ -1,0 +1,4 @@
+com\springbootcrudexample\serviceimpl\StudentServiceImplTest.class
+com\springbootcrudexample\SpringMainTest.class
+com\springbootcrudexample\controller\StudentControllerTest.class
+com\springbootcrudexample\repository\StudentRepositoryTest.class

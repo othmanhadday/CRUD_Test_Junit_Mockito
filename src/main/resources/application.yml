@@ -4,8 +4,8 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/springbootcrudexample
+    url: jdbc:mysql://localhost:3306/springbootcrudexample?serverTimezone=UTC
     username: root
-    password:
+    password: azerty
 server:
-   port: 9091       
+   port: 9090

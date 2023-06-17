@@ -40,13 +40,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public void virifyIfStudentIsExist(Student student) {
-        if (student.getName().isEmpty() || student.getName().isBlank()) {
+        if (student.getName().isEmpty() ) {
             throw new MissingAttributeException("Name Field is Empty, Please Fill it");
         }
-        if (student.getEmail().isEmpty() || student.getEmail().isBlank()) {
+        if (student.getEmail().isEmpty() ) {
             throw new MissingAttributeException("Email is Empty, Please Fill it");
         }
-        if (student.getRollNumber().isEmpty() || student.getRollNumber().isBlank()) {
+        if (student.getRollNumber().isEmpty() ) {
             throw new MissingAttributeException("Roll Number is Empty, Please Fill it");
         }
     }

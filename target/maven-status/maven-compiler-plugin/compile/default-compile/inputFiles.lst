@@ -1,7 +1,12 @@
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\config\JpaConfig.java
+C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\exceptions\BadRequestException.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\main\SpringMain.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\repository\StudentRepository.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\serviceimpl\StudentServiceImpl.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\controller\StudentController.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\entity\Student.java
+C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\exceptions\StudentNotFoundException.java
+C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\exceptions\ExceptionDetails.java
+C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\exceptions\MissingAttributeException.java
 C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\service\StudentService.java
+C:\Users\ohadday\spring-boot-crud-example-with-mysql\src\main\java\com\springbootcrudexample\exceptions\StudentExceptionHandler.java
