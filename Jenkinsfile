@@ -2,11 +2,10 @@ def CONTAINER_NAME = "crud_test"
 def ENV_NAME = getEnvName(env.BRANCH_NAME)
 def CONTAINER_TAG =  getTag(env.BUILD_NUMBER, env.BRANCH_NAME)
 def HTTP_PORT = getHTTPPort(env.BRANCH_NAME)
-dev EMAIL_RECIPENTS = "hadday8@gmail.com"
+def EMAIL_RECIPENTS = "hadday8@gmail.com"
 
 
 node {
-
     try{
 
         stage('Initialize') {
@@ -23,26 +22,26 @@ node {
             sh "mvn clean install"
         }
 
-                stage("Image Prune") {
-                    imagePrune(CONTAINER_NAME)
-                }
+        stage("Image Prune") {
+            imagePrune(CONTAINER_NAME)
+        }
 
-                stage('Image Build') {
-                    imageBuild(CONTAINER_NAME, CONTAINER_TAG)
-                }
+        stage('Image Build') {
+            imageBuild(CONTAINER_NAME, CONTAINER_TAG)
+        }
 
-                stage('Push to Docker Registry') {
-                    withCredentials([usernamePassword(credentialsId: 'DockerhubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
-                    }
-                }
+        stage('Push to Docker Registry') {
+            withCredentials([usernamePassword(credentialsId: 'DockerhubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
+            }
+        }
 
-                stage('Run App') {
-                    withCredentials([usernamePassword(credentialsId: 'DockerhubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        runApp(CONTAINER_NAME, CONTAINER_TAG, USERNAME, HTTP_PORT, ENV_NAME)
+        stage('Run App') {
+            withCredentials([usernamePassword(credentialsId: 'DockerhubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                runApp(CONTAINER_NAME, CONTAINER_TAG, USERNAME, HTTP_PORT, ENV_NAME)
 
-                    }
-                }
+            }
+        }
 
 
     } finally {
