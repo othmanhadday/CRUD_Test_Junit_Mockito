@@ -79,7 +79,7 @@ def runApp(containerName, tag, dockerHubUser, httpPort, envName) {
 
 
 String getEnvName(String branchName) {
-    if (branchName == 'main') {
+    if (branchName == 'master') {
         return 'prod'
     } else if (branchName.startsWith("release-") || branchName.startsWith("hotfix-") || branchName == 'ready') {
         return 'uat'
@@ -88,17 +88,17 @@ String getEnvName(String branchName) {
 }
 
 String getHTTPPort(String branchName) {
-    if (branchName == 'main') {
-        return '9001'
+    if (branchName == 'master') {
+        return '9091'
 
     } else if (branchName.startsWith("release-") || branchName.startsWith("hotfix-") || branchName == 'ready') {
-        return '9002'
+        return '9092'
     }
-    return '9003'
+    return '9091'
 }
 
 String getTag(String buildNumber, String branchName) {
-    if (branchName == 'main') {
+    if (branchName == 'master') {
         return buildNumber + '-unstable'
     }
     return buildNumber + '-stable'
